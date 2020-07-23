@@ -81,13 +81,7 @@ const PlaceItem = props => {
       </Modal>
       <li className="place-item">
         <Card className="place-item__content">
-          {isLoading && <LoadingSpinner asOverlay />}
-          <div className="place-item__image">
-            <img
-              src={`${process.env.process.env.REACT_APP_ASSET_URL} /${props.image}`}
-              alt={props.title}
-            />
-          </div>
+          {isLoading && <LoadingSpinner asOverlay />}<div className="place-item__image"><img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`} alt={props.title} /></div>
           <div className="place-item__info">
             <h2>{props.title}</h2>
             <h3>{props.address}</h3>
