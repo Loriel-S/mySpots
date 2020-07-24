@@ -94,7 +94,8 @@ const PlaceItem = props => {
             {auth.userId === props.creatorId && (
               <Button to={`/places/${props.id}`}>EDIT</Button>
             )}
-
+            
+            {/* danger will color button red */}
             {auth.userId === props.creatorId && (
               <Button danger onClick={showDeleteWarningHandler}>
                 DELETE

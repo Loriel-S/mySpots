@@ -1,4 +1,5 @@
 import { useCallback, useReducer } from 'react';
+// a hook is a normal JS function that starts with use (as a convention), and shares stateful logic. If inside of that function u change something that impact the state of the date, React will re-render the component that uses your custom hook.
 
 const formReducer = (state, action) => {
   switch (action.type) {

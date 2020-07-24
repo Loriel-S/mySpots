@@ -16,6 +16,8 @@ const UserItem = props => {
           <div className="user-item__info">
             <h2>{props.name}</h2>
             <h3>
+
+              {/* to check whether it will write in singular or plural form */}
               {props.placeCount} {props.placeCount === 1 ? 'Place' : 'Places'}
             </h3>
           </div>

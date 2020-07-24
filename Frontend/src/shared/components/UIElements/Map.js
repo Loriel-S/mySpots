@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+// useRef, we can create variables which survive re-render cycles of our components and don't lose their value.
 
 import './Map.css';
 
@@ -8,6 +9,7 @@ const Map = props => {
   const { center, zoom } = props;
 
   useEffect(() => {
+
     const map = new window.google.maps.Map(mapRef.current, {
       center: center,
       zoom: zoom

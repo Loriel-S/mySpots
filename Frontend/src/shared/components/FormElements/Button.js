@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './Button.css';
 
 const Button = props => {
+  // render different things, based on the props received
   if (props.href) {
     return (
       <a

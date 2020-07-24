@@ -6,7 +6,7 @@ import {
   Redirect,
   Switch
 } from 'react-router-dom';
-
+ 
 import Users from './user/pages/Users';
 // import NewPlace from './places/pages/NewPlace';
 // import UserPlaces from './places/pages/UserPlaces';
@@ -17,7 +17,7 @@ import { AuthContext } from './shared/context/auth-context';
 import { useAuth } from './shared/hooks/auth-hook';
 import LoadingSpinner from './shared/components/UIElements/LoadingSpinner';
 
-// we don't load these initially when the app starts, so no need in loading these in advance
+// we don't need to load these initially when the app starts, lazy enables that
 const NewPlace = React.lazy(() => import('./places/pages/NewPlace'))
 const UserPlaces = React.lazy(() => import('./places/pages/UserPlaces'))
 const UpdatePlace = React.lazy(() => import('./places/pages/UpdatePlace'))
@@ -32,6 +32,7 @@ const App = () => {
     routes = (
       <Switch>
         <Route path="/" exact>
+        {/* exact mean this will be rendered if the path is exactly / and nothing else */}
           <Users />
         </Route>
         <Route path="/:userId/places" exact>

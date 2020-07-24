@@ -39,7 +39,9 @@ const Auth = () => {
     if (!isLoginMode) {
       setFormData(
         {
+          // ...formState.input -  current value for email and password
           ...formState.inputs,
+          // want to add a new name and image field
           name: undefined,
           image: undefined
         },
@@ -61,6 +63,7 @@ const Auth = () => {
         false
       );
     }
+    // prevMode is a function of updating the State, which we should use if our new state update is used on the previous state and it inverts it by adding- !
     setIsLoginMode(prevMode => !prevMode);
   };
 

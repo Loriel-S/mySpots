@@ -8,6 +8,8 @@ const getCoordsForAddress = require('../util/location');
 const Place = require('../models/place');
 const User = require('../models/user');
 
+// CRUD operations for place.js
+
 const getPlaceById = async (req, res, next) => {
   const placeId = req.params.pid;
 
@@ -19,6 +21,7 @@ const getPlaceById = async (req, res, next) => {
       'Something went wrong, could not find a place.',
       500
     );
+    // return next(error) stops code execution incase we have an error. Otherwise, the code execution would continue even if we throw an error.
     return next(error);
   }
 
@@ -39,6 +42,7 @@ const getPlacesByUserId = async (req, res, next) => {
   // let places;
   let userWithPlaces;
   try {
+    // the populate method makes it easy to get access to docs stored in different collections in MongoDB.
     userWithPlaces = await User.findById(userId).populate('places');
   } catch (err) {
     const error = new HttpError(

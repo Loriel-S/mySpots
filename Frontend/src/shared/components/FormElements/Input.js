@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect } from 'react';
+// useReducer enables to manage state in a component and gives u a function u can call which updates the state and re-renders the component. Great when u have more complex State or whenever u have intoconnected State.
 
 import { validate } from '../../util/validators';
 import './Input.css';
@@ -13,6 +14,7 @@ const inputReducer = (state, action) => {
       };
     case 'TOUCH': {
       return {
+        // ...state, copies the old state object and copies all key-value pairs of that object into this new object, then we can over-write selected keys and properties.
         ...state,
         isTouched: true
       };

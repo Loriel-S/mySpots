@@ -4,7 +4,9 @@ import UserItem from './UserItem';
 import Card from '../../shared/components/UIElements/Card';
 import './UsersList.css';
 
+
 const UsersList = props => {
+  // if we have no users yet
   if (props.items.length === 0) {
     return (
       <div className="center">
@@ -15,6 +17,7 @@ const UsersList = props => {
     );
   }
 
+  // if we have uers
   return (
     <ul className="users-list">
       {props.items.map(user => (
